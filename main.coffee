@@ -206,37 +206,6 @@ class TemplateTranslator
 	toHandleBars: ->
 		new HandleBarsBuilder(@tree).get()
 
-s = 'qweqeqwqrqw' + 
-'<!-- IF    Eq(Var1,Var2)    -->' +
-'dfsdfd' +
-'<!-- /IF -->' +
-'<!-- IF    Var2    -->' +
-'fgf' +
-'<!-- /IF -->' +
-'<!-- FOR ITEMS -->' +
-'##.qweqwe##' +
-'<!-- /FOR -->' +
-'qweqweqwe
-<div style="background-image: url(##AuthorAvatar##)" class="b-photo__content-author">
-    <a data-clns="d713149" href="http://##MyMailHost####AuthorDir##" type="booster" class="booster-sc b-photo__content-author-name" name="clb1485859">
-        <!-- IF AuthorName -->##AuthorName##<!-- ELSE --->##AuthorEmail##<!-- /IF -->
-        <!-- IF JournalIsVipUser -->
-            qwe
-        <!-- /IF -->
-    </a>
-    <span class="b-photo__content-addtime">загружено ##image_AddTime_d##.##image_AddTime_m##.##image_AddTime_Y##</span>
-</div>
-<!-- IF !JournalIsCommunity -->
-	<div class="b-photo__content-album">
-	    Альбом: <a data-clns="d713148" type="booster" href="http://##MyMailHost##/##PhotoDomainAlias##/##PhotoUser##/photo?album_id=##album_id##" class="b-photo__content-albumlink booster-sc"><!-- IF album_Name -->##album_Name##<!-- ELSE -->Без названия<!-- /IF --></a>
-	</div>
-<!-- /IF -->
-<!--   FOR items --->
-	##.name##
-	##.id##
-<!-- /FOR -->
-'
 
 
-builder = new TemplateTranslator s
-console.log(builder.toHandleBars())
+module.exports = TemplateTranslator
