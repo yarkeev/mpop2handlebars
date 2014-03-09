@@ -1,4 +1,4 @@
-# Translate templates from mpop syntax to handlebars syntax
+Translate templates from mpop syntax to handlebars syntax
 
 ## Example:
 ```
