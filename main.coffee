@@ -13,7 +13,7 @@ class HandleBarsConditionTranslator
 	start: (template) ->
 		if @regEq.test template
 			arCond = template.match @regEq
-			"{{#ifEq #{arCond[2]} #{arCond[3]}}"
+			"{{#ifEq #{arCond[2]} #{arCond[3]}}}"
 		else if @regLt.test template
 			arCond = template.match @regLt
 			"{{#ifLt #{arCond[2]} #{arCond[3]}}}"
@@ -206,6 +206,6 @@ class TemplateTranslator
 	toHandleBars: ->
 		new HandleBarsBuilder(@tree).get()
 
-
+console.log(new TemplateTranslator('<!-- IF Eq(ActiveEmail,qweqwe) -->asd<!-- /IF -->').toHandleBars())
 
 module.exports = TemplateTranslator

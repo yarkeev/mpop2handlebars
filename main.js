@@ -19,7 +19,7 @@ HandleBarsConditionTranslator = (function() {
     var arCond;
     if (this.regEq.test(template)) {
       arCond = template.match(this.regEq);
-      return "{{#ifEq " + arCond[2] + " " + arCond[3] + "}";
+      return "{{#ifEq " + arCond[2] + " " + arCond[3] + "}}";
     } else if (this.regLt.test(template)) {
       arCond = template.match(this.regLt);
       return "{{#ifLt " + arCond[2] + " " + arCond[3] + "}}";
@@ -306,5 +306,7 @@ TemplateTranslator = (function() {
   return TemplateTranslator;
 
 })();
+
+console.log(new TemplateTranslator('<!-- IF Eq(ActiveEmail,qweqwe) -->asd<!-- /IF -->').toHandleBars());
 
 module.exports = TemplateTranslator;
