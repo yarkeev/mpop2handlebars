@@ -9,7 +9,7 @@ HandleBarsConditionTranslator = (function() {
 
   HandleBarsConditionTranslator.prototype.regUnless = new RegExp(/<!-*\s*if\s*!(\w*)/i);
 
-  HandleBarsConditionTranslator.prototype.regEq = new RegExp(/<!-*\s*if\s*(Eq[2]?)\((\w*),(\w*)\)/i);
+  HandleBarsConditionTranslator.prototype.regEq = new RegExp(/<!-*\s*if\s*(Eq[2]?)\((#*\w*#*),(#*\w*#*)\)/i);
 
   HandleBarsConditionTranslator.prototype.regLt = new RegExp(/<!-*\s*if\s*(Lt[2]?)\((\w*),(\w*)\)/i);
 
@@ -306,7 +306,5 @@ TemplateTranslator = (function() {
   return TemplateTranslator;
 
 })();
-
-console.log(new TemplateTranslator('<!-- IF Eq(ActiveEmail,qweqwe) -->asd<!-- /IF -->').toHandleBars());
 
 module.exports = TemplateTranslator;

@@ -4,7 +4,7 @@ class HandleBarsConditionTranslator
 
 	regUnless: new RegExp /<!-*\s*if\s*!(\w*)/i
 
-	regEq: new RegExp /<!-*\s*if\s*(Eq[2]?)\((\w*),(\w*)\)/i
+	regEq: new RegExp /<!-*\s*if\s*(Eq[2]?)\((#*\w*#*),(#*\w*#*)\)/i
 
 	regLt: new RegExp /<!-*\s*if\s*(Lt[2]?)\((\w*),(\w*)\)/i
 
@@ -205,7 +205,5 @@ class TemplateTranslator
 
 	toHandleBars: ->
 		new HandleBarsBuilder(@tree).get()
-
-console.log(new TemplateTranslator('<!-- IF Eq(ActiveEmail,qweqwe) -->asd<!-- /IF -->').toHandleBars())
 
 module.exports = TemplateTranslator
